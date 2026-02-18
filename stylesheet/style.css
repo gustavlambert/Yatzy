@@ -1,0 +1,45 @@
+
+
+.roll {
+    border: 1px solid blue;
+    padding: 20px;
+    margin: 20px;
+    width: fit-content;
+}
+
+.points {
+    border: 1px solid blue;
+    padding: 20px;
+    margin: 20px;
+    width: fit-content;
+}
+
+input{
+    width: 50px;
+    font-size: 14px;
+}
+
+
+.dice{
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    gap: 15px;
+}
+
+.controls{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.labels{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 15px;
+}
+
+#rollButton{
+    padding: 15px 20px;
+    font-size: 15px;
+}

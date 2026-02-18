@@ -1,11 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet/style.css">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <div class="roll">
+        <div class="dice">
+            <img id="dice0" src="terninger/dice-six-faces-6.png" width="50">
+            <img id="dice1" src="terninger/dice-six-faces-6.png" width="50">
+            <img id="dice2" src="terninger/dice-six-faces-6.png" width="50">
+            <img id="dice3" src="terninger/dice-six-faces-6.png" width="50">
+            <img id="dice4" src="terninger/dice-six-faces-6.png" width="50">
+        </div>
+        <div class="controls">
+            <label id="turn">Turn 1</label>
+            <button id="rollButton">Roll!</button>
+
+        </div>
+
+    </div>
+
+    <div class="points">
+        <div class="labels">
+            <label>1-s</label>
+            <input type="text" readonly>
+            <label>2-s</label>
+            <input type="text" readonly>
+            <label>3-s</label>
+            <input type="text" readonly>
+            <label>4-s</label>
+            <input type="text" readonly>
+            <label>5-s</label>
+            <input type="text" readonly>
+            <label>6-s</label>
+            <input type="text" readonly>
+            <label>One pair</label>
+            <input type="text" readonly>
+            <label>Two pairs</label>
+            <input type="text" readonly>
+            <label>Three same</label>
+            <input type="text" readonly>
+            <label>Four same</label>
+            <input type="text" readonly>
+            <label>Full house</label>
+            <input type="text" readonly>
+            <label>Small straight</label>
+            <input type="text" readonly>
+            <label>Large straight</label>
+            <input type="text" readonly>
+            <label>Chance</label>
+            <input type="text" readonly>
+            <label>Yatzy</label>
+            <input type="text" readonly>
+        </div>
+
+    </div>
+
+
+
+    <script src="yatzyDice.js"></script>
 </body>
+
 </html>

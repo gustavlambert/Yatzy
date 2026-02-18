@@ -1,5 +1,11 @@
+
+const rollBtn = document.getElementById("rollButton")
+
 // Face values of the 5 dice
-let values = [0, 0, 0, 0, 0];
+let values = [1, 1, 1, 1, 1]; // start med 1
+let holdStatus = [false, false, false, false, false];
+
+
 
 // Number of throws
 let throwCount = 0;
@@ -24,15 +30,38 @@ function resetThrowCount() {
     throwCount = 0;
 }
 
-// Throw dice
-function throwDice(holdStatus) {
+// Throw dice   
+function throwDice() {
     for (let i = 0; i < holdStatus.length; i++) {
         if (!holdStatus[i]) {
             values[i] = Math.floor(Math.random() * 6) + 1;
         }
     }
     throwCount++;
+    if(throwCount === 3){
+        rollBtn.disabled = true
+    }
+    document.getElementById("turn").textContent = "Turn " + throwCount
+    updateDiceImages()
 }
+
+rollBtn.addEventListener("click", () => throwDice())
+
+function updateDiceImages() {
+    for (let i = 0; i < values.length; i++) {
+        const img = document.getElementById("dice" + i);
+        const value = values[i]; // 1–6
+        img.src = `terninger/dice-six-faces-${value}.png`;
+    }
+}
+
+for (let i = 0; i < values.length; i++) {
+    document.getElementById("dice" + i).addEventListener("click", () => {
+        holdStatus[i] = !holdStatus[i]; // toggle hold
+        document.getElementById("dice" + i).style.border = holdStatus[i] ? "2px solid red" : "none";
+    });
+}
+
  
 // Hjælpemetode til at tælle hvor mange gange hvert øjental forekommer på terninger
 function frequency() {
@@ -214,3 +243,4 @@ function getResults() {
         yatzyPoints()
     ];
 }
+
